@@ -1,0 +1,45 @@
+<div class="character-list">
+  <div
+    *ngFor="let character of characters"
+    class="character-card"
+    (click)="viewCharacterDetails(character.id)"
+  >
+    <img [src]="character.image" [alt]="character.name">
+    <h2>{{ character.name }}</h2>
+    <p>Status: {{ character.status }}</p>
+    <p>Species: {{ character.species }}</p>
+  </div>
+</div>
+<div class="pagination">
+  <button
+    (click)="goToPage(1)"
+    [disabled]="currentPage === 1"
+  >
+    First
+  </button>
+  <button
+    (click)="goToPage(currentPage - 1)"
+    [disabled]="currentPage === 1"
+  >
+    Previous
+  </button>
+  <button
+    *ngFor="let page of visiblePages"
+    (click)="goToPage(page)"
+    [class.active]="page === currentPage"
+  >
+    {{ page }}
+  </button>
+  <button
+    (click)="goToPage(currentPage + 1)"
+    [disabled]="currentPage === totalPages"
+  >
+    Next
+  </button>
+  <button
+    (click)="goToPage(totalPages)"
+    [disabled]="currentPage === totalPages"
+  >
+    Last
+  </button>
+</div>

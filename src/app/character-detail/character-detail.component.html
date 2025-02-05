@@ -1,0 +1,15 @@
+<div *ngIf="character" class="character-detail">
+  <button (click)="goBack()" class="back-button">Back to Characters</button>
+  <img [src]="character.image" [alt]="character.name" class="character-image">
+  <h1>{{ character.name }}</h1> <!-- Display the character's name -->
+  <p><strong>Status:</strong> {{ character.status }}</p>
+  <p><strong>Species:</strong> {{ character.species }}</p>
+  <p><strong>Gender:</strong> {{ character.gender }}</p>
+  <p><strong>Origin:</strong> {{ character.origin.name }}</p>
+  <p><strong>Location:</strong> {{ character.location.name }}</p>
+  <p><strong>Episodes:</strong> {{ character.episode.length }}</p>
+</div>
+
+<div *ngIf="!character" class="error-message">
+  <p>Character not found.</p>
+</div>
