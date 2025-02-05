@@ -42,7 +42,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   updateVisiblePages(): void {
-    const range = 2; // Number of pages to show before and after the current page
+    const range = 2;
     const start = Math.max(1, this.currentPage - range);
     const end = Math.min(this.totalPages, this.currentPage + range);
 

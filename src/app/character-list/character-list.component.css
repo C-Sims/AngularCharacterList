@@ -50,7 +50,7 @@
   align-items: center;
   margin: 20px 0;
   gap: 5px;
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .pagination button {
